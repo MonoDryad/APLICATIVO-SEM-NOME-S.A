@@ -1,4 +1,4 @@
-# KAMBANK
+# Gaia Cup
 
 ## Projeto da SA
 
@@ -9,7 +9,7 @@ Esse é o projeto do grupo INEXORABILIS TEAM do curso Desenvolvimento de Sistema
 - [Marcyelen Rosa](https://github.com/Marcynha01)
 - [Kamilly Fernanda](https://github.com/Millyzinha)
 
-## KAMBANK
+## O APP
 
 
 ## Links
