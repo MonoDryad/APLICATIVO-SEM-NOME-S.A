@@ -10,6 +10,6 @@ Esse é o projeto do grupo INEXORABILIS TEAM do curso Desenvolvimento de Sistema
 - [Kamilly Fernanda](https://github.com/Millyzinha)
 
 ## O APP
-
+![Trello](https://trello.com/b/DcS7GHIi/gaia-cup-o-aplicativo)
 
 ## Links
