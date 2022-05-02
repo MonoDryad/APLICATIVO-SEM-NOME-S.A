@@ -1,15 +1,16 @@
+import { StatusBar } from 'expo-status-bar'
 import reactDom from "react-dom";
+import styles from './src/styles/styles'
 import {View, Text } from "react-native";
-import styles from "./src/styles/app"
+import User from './src/scripts/user';
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>OLÁ</Text>
-      <Text style={styles.title}>Não possuí uma conta? Crie uma!</Text>
-
+      <Text>Olá {User()}, seja bem-vindo(a) à Gaia Cup</Text>
+      <StatusBar style="auto" />
     </View>
-  );
+  )
 }
 
 export default App

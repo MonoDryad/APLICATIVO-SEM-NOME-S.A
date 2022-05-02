@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "Gaia Cup",
+    "slug": "gaiacup",
+    "version": "0.0.2",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "Gaia Cup"
+}
