@@ -1,4 +1,4 @@
-# Gaia Cup
+# Gaia Cup - o APP
 
 <p>
   <!-- iOS -->
