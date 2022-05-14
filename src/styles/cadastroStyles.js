@@ -16,7 +16,7 @@ export default StyleSheet.create({
      },
      
      bigupwelcome: {
-          fontSize: 33,
+          fontSize: 30,
           color: '#fff',
           fontWeight: 'bold',
           marginTop: 15
