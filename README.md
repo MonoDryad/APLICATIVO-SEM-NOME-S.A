@@ -29,8 +29,8 @@
 - Usando o sistema de moedas, o usuário pode votar no seu time;
 - Quando o time que o usuário ganha, ele irá receber uma quantia acima do que foi usado;
 - Essa quantia recebida é calculada com o sistema de Multiplação comparando os votos:
- - Ex: OKM 31% vs 69% OKO
- - Se o time da OKM ganhar, quem votou para eles receberá uma quantia de ~3,6 vezes acima do apostado.
+  - Ex: OKM 31% vs 69% OKO
+  - Se o time da OKM ganhar, quem votou para eles receberá uma quantia de ~3,6 vezes acima do apostado.
 
 ## Cronograma
 ### Chamado de Crono no aplicativo
