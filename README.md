@@ -10,10 +10,39 @@
     <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
   </a>
   <!-- Web -->
-  <a href="https://docs.expo.dev/workflow/web/">
-    <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-  </a>
 </p>
+
+# Funções
+
+## Sistema de Moeda (GCUPS)
+
+- O usuário começa com 200 gcups;
+- A cada 24 horas (o tempo conta no início da criação da conta) recebe 100 gcups.
+
+## Notícias
+
+- O usuário consegue acompanhar todas as notícias da Gaia Cup pelo APP;
+- Notícias são criadas pelo administrador pelo Web-Site de administrador da Gaia Cup.
+
+## Votação
+
+- Usando o sistema de moedas, o usuário pode votar no seu time;
+- Quando o time que o usuário ganha, ele irá receber uma quantia acima do que foi usado;
+- Essa quantia recebida é calculada com o sistema de Multiplação comparando os votos:
+ - Ex: OKM 31% vs 69% OKO
+ - Se o time da OKM ganhar, quem votou para eles receberá uma quantia de ~3,6 vezes acima do apostado.
+
+## Cronograma
+### Chamado de Crono no aplicativo
+ 
+- Permite ver os 8 próximos jogos da Gaia Cup;
+- Atualizado pelo administrador no Web-site de administrador.
+
+## Tabela
+
+- Aqui podemos ver a tabela da atual fase da Gaia Cup;
+- Atualizado pelo administrador no Web-site de administrador;
+- Dinâmico.
 
 ## 🚀 Como usar
 
