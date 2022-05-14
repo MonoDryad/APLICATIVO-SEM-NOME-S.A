@@ -12,6 +12,8 @@
   <!-- Web -->
 </p>
 
+##### Aplicativo desenvolvido para a Situação de Aprendizagem da Segunda Fase do curso Desenvolvimento de Sistema no Serviço Nacional de Aprendizagem Industrial.
+
 # Funções
 
 ## Sistema de Moeda (GCUPS)
