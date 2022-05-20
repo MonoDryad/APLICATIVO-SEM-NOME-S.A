@@ -1,4 +1,4 @@
-# Gaia Cup - o APP
+# My Universal React Project
 
 <p>
   <!-- iOS -->
@@ -10,48 +10,35 @@
     <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
   </a>
   <!-- Web -->
+  <a href="https://docs.expo.dev/workflow/web/">
+    <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
+  </a>
 </p>
 
-##### Aplicativo desenvolvido para a Situação de Aprendizagem da Segunda Fase do curso Desenvolvimento de Sistema no Serviço Nacional de Aprendizagem Industrial.
+## 🚀 How to use
 
-# Funções
+- Install packages with `yarn` or `npm install`.
+  - If you have native iOS code run `npx pod-install`
+- Run `yarn start` to start the bundler.
+- Open the project in a React runtime to try it:
+  - iOS: [Client iOS](https://itunes.apple.com/app/apple-store/id982107779)
+  - Android: [Client Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample)
+  - Web: Any web browser
 
-## Sistema de Moeda (GCUPS)
+## Adding Native Code
 
-- O usuário começa com 200 gcups;
-- A cada 24 horas (o tempo conta no início da criação da conta) recebe 100 gcups.
+This project can be run from a web browser or the Expo client app. You may find that you want to add more native code later on. You can do this by ejecting the project and rebuilding it yourself.
 
-## Notícias
+- Run `yarn eject` to create the native projects.
+- You can still run your project in the web browser or Expo client, you just won't be able to access any new native modules you add.
 
-- O usuário consegue acompanhar todas as notícias da Gaia Cup pelo APP;
-- Notícias são criadas pelo administrador pelo Web-Site de administrador da Gaia Cup.
+## Publishing
 
-## Votação
+- Deploy the native app to the App store and Play store using this guide: [Deployment](https://docs.expo.dev/distribution/app-stores/).
+- Deploy the website using this guide: [Web deployment](https://docs.expo.dev/distribution/publishing-websites/).
 
-- Usando o sistema de moedas, o usuário pode votar no seu time;
-- Quando o time que o usuário ganha, ele irá receber uma quantia acima do que foi usado;
-- Essa quantia recebida é calculada com o sistema de Multiplação comparando os votos:
-  - Ex: OKM 31% vs 69% OKO
-  - Se o time da OKM ganhar, quem votou para eles receberá uma quantia de ~3,6 vezes acima do apostado.
+## 📝 Notes
 
-## Cronograma
-### Chamado de Crono no aplicativo
- 
-- Permite ver os 8 próximos jogos da Gaia Cup;
-- Atualizado pelo administrador no Web-site de administrador.
-
-## Tabela
-
-- Aqui podemos ver a tabela da atual fase da Gaia Cup;
-- Atualizado pelo administrador no Web-site de administrador;
-- Dinâmico.
-
-## 🚀 Como usar
-
-- Instale os pacotes com `yarn` ou `npm install`.
-  - Se você usa o iOS nativo use `npx pod-install`
-- Use `yarn start ou npm start ou expo start` para iniciar.
-- Abra o projeto em React Runtime para ver:
-  - iOS: [Cliente iOS](https://itunes.apple.com/app/apple-store/id982107779)
-  - Android: [Cliente Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample)
-  - Web: Qualquer navegador
+- Learn more about [Universal React](https://docs.expo.dev/).
+- See what API and components are [available in the React runtimes](https://docs.expo.dev/versions/latest/).
+- Find out more about developing apps and websites: [Guides](https://docs.expo.dev/guides/).

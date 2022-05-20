@@ -1,9 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Image, Text, ScrollView ,View, TextInput, TouchableOpacity } from 'react-native';
-import gaialogo from '../../assets/images/1.png'
-import hexagon from '../../assets/images/hexagons.png'
-import seta from '../../assets/images/seta.png'
-import cadastroStyles from '../../src/styles/cadastroStyles'
+import gaialogo from '../assets/images/1.png'
+import hexagon from '../assets/images/hexagons.png'
+import seta from '../assets/images/seta.png'
+import cadastroStyles from '../styles/cadastroStyles'
 
 export default function Cadastro({ navigation }){
      return (

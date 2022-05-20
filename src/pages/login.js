@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Image, Text, ScrollView ,View, TextInput, TouchableOpacity } from 'react-native';
 import gaialogo from '../../assets/images/1.png'
 import hexagon from '../../assets/images/hexagons.png'
