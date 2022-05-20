@@ -3,8 +3,8 @@
   "expoServerPort": 19000,
   "packagerPort": 19000,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
-  "webpackServerPort": 19006
+  "expoServerNgrokUrl": "https://6q-t6e.anonymous.gaia-cup-o-app--s-a-main.exp.direct",
+  "packagerNgrokUrl": "https://6q-t6e.anonymous.gaia-cup-o-app--s-a-main.exp.direct",
+  "ngrokPid": 8500,
+  "webpackServerPort": 19007
 }
