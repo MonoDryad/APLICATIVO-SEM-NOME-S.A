@@ -1,8 +1,9 @@
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Image, Text, ScrollView ,View, TextInput, TouchableOpacity } from 'react-native';
-import gaialogo from '../assets/images/1.png'
-import hexagon from '../assets/images/hexagons.png'
-import seta from '../assets/images/seta.png'
-import cadastroStyles from '../styles/cadastroStyles'
+import gaialogo from '../../assets/images/1.png'
+import hexagon from '../../assets/images/hexagons.png'
+import seta from '../../assets/images/seta.png'
+import cadastroStyles from '../../src/styles/cadastroStyles'
 
 export default function Cadastro({ navigation }){
      return (
@@ -20,7 +21,7 @@ export default function Cadastro({ navigation }){
                     <Text style={[cadastroStyles.yellowText]}> fazer login.</Text>
                     </Text>
                </TouchableOpacity>
-               <TouchableOpacity style={{marginLeft: 300, marginTop: 20}}>
+               <TouchableOpacity style={{marginLeft: 300, marginTop: 20}} >
                     <Image source={seta} style={cadastroStyles.seta}/>
                     <Text style={cadastroStyles.whiteColor}>Continuar cadastro</Text>
                </TouchableOpacity>
