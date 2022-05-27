@@ -11,18 +11,38 @@
   </a>
 </p>
 
-## 🚀 How to use
+# Funções
 
-- Install packages with `yarn` or `npm install`.
-  - If you have native iOS code run `npx pod-install`
-- Run `yarn start` to start the bundler.
-- Open the project in a React runtime to try it:
-  - iOS: [Client iOS](https://itunes.apple.com/app/apple-store/id982107779)
-  - Android: [Client Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample)
-  - Web: Any web browser
+## Sistema de Moeda (GCUPS)
 
-## 📝 Notes
+- O usuário começa com 200 gcups;
+- A cada 24 horas (o tempo conta no início da criação da conta) recebe 100 gcups.
 
-- Learn more about [Universal React](https://docs.expo.dev/).
-- See what API and components are [available in the React runtimes](https://docs.expo.dev/versions/latest/).
-- Find out more about developing apps and websites: [Guides](https://docs.expo.dev/guides/).
+## Notícias
+
+- O usuário consegue acompanhar todas as notícias da Gaia Cup pelo APP;
+- Notícias são criadas pelo administrador pelo Web-Site de administrador da Gaia Cup.
+
+## Votação
+
+- Usando o sistema de moedas, o usuário pode votar no seu time;
+- Quando o time que o usuário ganha, ele irá receber uma quantia acima do que foi usado;
+- Essa quantia recebida é calculada com o sistema de Multiplação comparando os votos:
+ - Ex: OKM 31% vs 69% OKO
+ - Se o time da OKM ganhar, quem votou para eles receberá uma quantia de ~3,6 vezes acima do apostado.
+
+## Cronograma
+### Chamado de Crono no aplicativo
+
+- Permite ver os 8 próximos jogos da Gaia Cup;
+- Atualizado pelo administrador no Web-site de administrador.
+
+## Tabela
+
+- Aqui podemos ver a tabela da atual fase da Gaia Cup;
+- Atualizado pelo administrador no Web-site de administrador;
+- Dinâmico.
+
+## 🚀 Como usar
+
+- Instale os pacotes com `yarn` ou `npm install`.
