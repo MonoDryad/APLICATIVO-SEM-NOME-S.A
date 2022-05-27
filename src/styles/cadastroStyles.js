@@ -39,7 +39,6 @@ export default StyleSheet.create({
           borderBottomWidth: 1,
           borderLeftColor: '#3b3939',
           borderLeftWidth: 1,
-          outlineStyle: 'none',
           padding: 7,
           width: 240
      },

@@ -1,8 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Image, Text, ScrollView ,View, TextInput, TouchableOpacity } from 'react-native';
-import gaialogo from '../../assets/images/1.png'
-import hexagon from '../../assets/images/hexagons.png'
-import seta from '../../assets/images/seta.png'
+import gaialogo from '../assets/images/1.png'
+import hexagon from '../assets/images/hexagons.png'
+import seta from '../assets/images/seta.png'
 import cadastroStyles from '../styles/cadastroStyles'
 
 function Login({ navigation }){
@@ -11,7 +10,7 @@ function Login({ navigation }){
                <Image style={[cadastroStyles.hexagon, cadastroStyles.hexagonOne]} source={hexagon}/>
                <Image style={[cadastroStyles.hexagon, cadastroStyles.hexagonTwo]} source={hexagon}/>
                <Image style={[cadastroStyles.hexagon, cadastroStyles.hexagonThree]} source={hexagon}/>
-               <Image style={[cadastroStyles.bigupwelcome, cadastroStyles.gcuplogo]} source={gaialogo}/>
+               <Image style={[cadastroStyles.gcuplogo]} source={gaialogo}/>
                <Text style={cadastroStyles.bigupwelcome}>Bem-vindo à Gaia Cup</Text>
                <Text style={cadastroStyles.signup}>Faça o seu Login</Text>
                <TextInput style={[cadastroStyles.insertname, cadastroStyles.inputLogin]} placeholderTextColor="#6e6e6e"  placeholder="Usuário ou E-mail"></TextInput>
@@ -26,7 +25,6 @@ function Login({ navigation }){
                     <Text style={cadastroStyles.whiteColor}>Entrar</Text>
                </TouchableOpacity>
                <Text style={[cadastroStyles.copyright, cadastroStyles.whiteColor]}>© 2022 Copyright: Inexorabilis Team</Text>
-               <StatusBar style="auto"/>
           </View>
      )
 }
