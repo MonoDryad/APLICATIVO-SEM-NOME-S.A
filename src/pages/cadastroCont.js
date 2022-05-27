@@ -1,8 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Image, Text, ScrollView ,View, TextInput, TouchableOpacity } from 'react-native';
-import gaialogo from '../../assets/images/1.png'
-import hexagon from '../../assets/images/hexagons.png'
-import seta from '../../assets/images/seta.png'
+import gaialogo from '../assets/images/1.png'
+import hexagon from '../assets/images/hexagons.png'
+import seta from '../assets/images/seta.png'
 import cadastroStyles from '../styles/cadastroStyles'
 
 export default function CadastroCont({ navigation }){
@@ -21,7 +20,6 @@ export default function CadastroCont({ navigation }){
                     <Text style={cadastroStyles.whiteColor}>Finalizar</Text>
                </TouchableOpacity>
                <Text style={[cadastroStyles.copyright, cadastroStyles.whiteColor]}>© 2022 Copyright: Inexorabilis Team</Text>
-               <StatusBar style="auto"/>
           </View>
      )
 }

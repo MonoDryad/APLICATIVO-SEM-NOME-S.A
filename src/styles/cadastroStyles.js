@@ -16,7 +16,7 @@ export default StyleSheet.create({
      },
      
      bigupwelcome: {
-          fontSize: 30,
+          fontSize: 24,
           color: '#fff',
           fontWeight: 'bold',
           marginTop: 15
@@ -49,7 +49,8 @@ export default StyleSheet.create({
      },
      
      whiteColor:{
-          color: 'white'
+          color: 'white',
+          marginLeft: 10
      },
      
      hexagon:{

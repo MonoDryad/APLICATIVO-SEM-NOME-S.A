@@ -20,9 +20,9 @@ export default function Cadastro({ navigation }){
                     <Text style={[cadastroStyles.yellowText]}> fazer login.</Text>
                     </Text>
                </TouchableOpacity>
-               <TouchableOpacity style={{marginLeft: 300, marginTop: 20}}>
+               <TouchableOpacity onPress={() => navigation.navigate('CadastroCont')} style={{marginLeft: 300, marginTop: 20}}>
                     <Image source={seta} style={cadastroStyles.seta}/>
-                    <Text style={cadastroStyles.whiteColor}>Continuar cadastro</Text>
+                    <Text style={cadastroStyles.whiteColor}>Continuar</Text>
                </TouchableOpacity>
                <Text style={[cadastroStyles.copyright, cadastroStyles.whiteColor]}>© 2022 Copyright: Inexorabilis Team</Text>
           </View>

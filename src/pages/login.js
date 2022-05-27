@@ -22,7 +22,7 @@ function Login({ navigation }){
                </TouchableOpacity>
                <TouchableOpacity style={{marginLeft: 300, marginTop: 20}}>
                     <Image source={seta} style={cadastroStyles.seta}/>
-                    <Text style={cadastroStyles.whiteColor}>Entrar</Text>
+                    <Text style={cadastroStyles.whiteColor}>Conectar</Text>
                </TouchableOpacity>
                <Text style={[cadastroStyles.copyright, cadastroStyles.whiteColor]}>© 2022 Copyright: Inexorabilis Team</Text>
           </View>
