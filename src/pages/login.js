@@ -20,7 +20,7 @@ function Login({ navigation }){
                     <Text style={[cadastroStyles.yellowText]}> fazer o cadastro.</Text>
                     </Text>
                </TouchableOpacity>
-               <TouchableOpacity style={{marginLeft: 300, marginTop: 20}}>
+               <TouchableOpacity onPress={() => navigation.navigate('Home')} style={{marginLeft: 300, marginTop: 20}}>
                     <Image source={seta} style={cadastroStyles.seta}/>
                     <Text style={cadastroStyles.whiteColor}>Conectar</Text>
                </TouchableOpacity>
