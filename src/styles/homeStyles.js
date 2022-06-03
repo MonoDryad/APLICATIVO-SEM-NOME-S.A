@@ -6,6 +6,7 @@ export default StyleSheet.create({
         flex: 1,
         backgroundColor: '#121212',
         alignItems: 'center',
+        justifyContent: 'center'
     },
     header: {
         backgroundColor: '#242424',
@@ -36,8 +37,8 @@ export default StyleSheet.create({
     teamHeaderImage:{
         width: 100,
         height: 100,
-        marginLeft: 40,
-        marginRight: 40,
+        marginLeft: 30,
+        marginRight: 30,
     },
     headerSubView: {
         alignItems: 'center',
@@ -55,7 +56,8 @@ export default StyleSheet.create({
         alignItems: 'center',
         borderBottomColor: '#ffd200',
         borderBottomWidth: 1,
-        width: '100%'
+        width: '100%',
+        paddingBottom: 20
     },
     yellowColor:{
         color: '#ffd200',
@@ -64,7 +66,8 @@ export default StyleSheet.create({
         color: '#fff',
     },
     votingTitle: {
-        fontSize: 34,
+        fontSize: 30,
+        textAlign: 'center'
     },
     votingSubtitle:{
         fontSize: 26,
@@ -72,6 +75,8 @@ export default StyleSheet.create({
     },
     mainVotingView:{
         marginTop: 30,
+        justifyContent: 'center',
+        width: '100%'
     },
     votingCounts:{
         flexDirection: 'row',
@@ -95,9 +100,94 @@ export default StyleSheet.create({
         justifyContent: 'space-between'
     },
     mySliderView:{
-        width: '100%',
+        width: 350,
         height: 30,
         borderRadius: 1000,
         backgroundColor: '#ff0000'
+    },
+    tabelaView:{
+        borderBottomColor: '#ffd200',
+        borderBottomWidth: 1,
+        paddingBottom: 20,
+        width: '100%'
+    },
+    tabelaTitleView: {
+        marginTop: 30,
+        alignItems: 'center'
+    },
+    tabelaSubTitleText:{
+        fontSize: 26,
+        color: 'white',
+    },
+    tabelaTitleText:{
+        fontSize: 30,
+        color: 'white'
+    },
+    tabelaTimeView:{
+        marginTop: 35,
+        alignItems: 'center',
+        flexDirection: 'row',
+        
+    },
+    tabelaTimeSpacing:{
+        width: '85%',
+        marginLeft: 10,
+    },
+    teamLogoImage:{
+        width: 80,
+        height: 80,
+    },
+    teamNameTabela:{
+        color: 'white',
+        fontSize: 24
+    },
+    teamSiglaTabela:{
+        color: '#6f6f6f'
+    },
+    noticiasMainView:{
+        alignContent: 'center',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    noticiasSubView:{
+        flexDirection: 'row',
+        marginTop: 30,
+        alignContent: 'space-between',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    noticiaView:{
+        flexDirection: 'column',
+        alignContent: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '40%'
+    },
+    imageNoticia:{
+        width: 180,
+        height: 80,
+        borderTopWidth: 1,
+        borderBottomWidth: 1,
+        borderRightWidth: 1,
+        borderLeftWidth: 1,
+        borderColor: '#ffd200',
+    },
+    noticiasTitleText:{
+        color: 'white',
+        fontSize: 36
+    },
+    textNoticia:{
+        color: 'white',
+        width: '100%',
+        borderBottomWidth: 1,
+        borderRightWidth: 1,
+        borderLeftWidth: 1,
+        borderColor: '#ffd200',
+        backgroundColor: '#242424'
+    },
+    copyright: {
+        marginTop: 20,
+        marginBottom: 30,
     }
+
 })

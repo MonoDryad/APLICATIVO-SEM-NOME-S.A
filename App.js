@@ -1,20 +1,17 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Login from './src/pages/login';
-import Cadastro from './src/pages/cadastro';
-import CadastroCont from './src/pages/cadastroCont';
-import Home from './src/pages/Home'
+
+import Deslogado from './src/components/signup';
+import Logado from './src/components/signed'
 
 const Stack = createStackNavigator();
 
 function App() {
-  return (
+  return(
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false, }}>
-        <Stack.Screen name="Login" component={Login} options={{ title: 'Login', animationEnabled: false, animation: 'none'}}/>
-        <Stack.Screen name="Cadastro" component={Cadastro} options={{ title: 'Cadastro', animationEnabled: false, animation: 'none'}}/>
-        <Stack.Screen name="CadastroCont" component={CadastroCont} options={{ title: 'Cadastro Continuação', animationEnabled: false, animation: 'none'}}/>
-        <Stack.Screen name="Home" component={Home} options={{ title: 'Home', animationEnabled: false, animation: 'none'}}/>
+        <Stack.Screen name="Login" component={Deslogado} options={{ title: 'Login', animationEnabled: false, animation: 'none'}}/>
+        <Stack.Screen name="Home" component={Logado} options={{ title: 'Home', animationEnabled: false, animation: 'none'}}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
