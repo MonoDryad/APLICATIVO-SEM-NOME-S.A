@@ -1,8 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Deslogado from './src/components/signup';
-import Logado from './src/components/signed'
+import Deslogado from './src/routers/signup';
+import Logado from './src/routers/signed'
 
 const Stack = createStackNavigator();
 
