@@ -2,7 +2,7 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Votacao from '../pages/votacao';
-import Crono from '../pages/votacao';
+import Crono from '../pages/Crono';
 import Tabela from '../pages/votacao';
 import Noticias from '../pages/votacao';
 import Home from '../pages/Home'
