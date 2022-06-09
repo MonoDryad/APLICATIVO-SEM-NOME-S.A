@@ -21,8 +21,8 @@ export default function Votacao({ navigation }){
 
      return (
           <View style={votacaoStyles.container}>
-               <View style={mainHeader.mainHeader}>
-                    <View style={mainHeader.container}>
+            <View style={{paddingLeft: 10, paddingRight: 10, backgroundColor:'#121212',marginTop: 25, flexDirection: 'row',borderBottomColor: '#ffd200', borderBottomWidth: 1,}}>
+                    <View style={[{marginBottom: 10,},mainHeader.container]}>
                          <View style={mainHeader.coinView}>
                               <Image style={mainHeader.coinImage} source={coin}/>
                               <Text style={mainHeader.coinText}>0</Text>

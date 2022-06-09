@@ -5,7 +5,8 @@ export default StyleSheet.create({
         flex: 1,
         backgroundColor: '#121212',
         alignItems: 'center',
-        alignContent: 'center'
+        alignContent: 'center',
+        justifyContent: 'flex-start'
     },
     mid:{
         marginLeft: 30,

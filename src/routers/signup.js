@@ -5,14 +5,20 @@ import Login from '../pages/login';
 import Cadastro from '../pages/cadastro';
 import CadastroCont from '../pages/cadastroCont';
 
+import FaseOctogonal from '../pages/FaseOctogonal';
+import FaseGrupo from '../pages/FaseGrupo';
+
+
 const Stack = createStackNavigator();
 
 function Logado(){   
     return(
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="Login" component={Login} />
-            <Stack.Screen name="Cadastro" component={Cadastro} />
-            <Stack.Screen name="CadastroCont" component={CadastroCont} />
+            <Stack.Screen name="Login" component={Login} options={{ animationEnabled: false, animation: 'none'}}/>
+            <Stack.Screen name="Cadastro" component={Cadastro} options={{ animationEnabled: false, animation: 'none'}}/>
+            <Stack.Screen name="CadastroCont" component={CadastroCont} options={{ animationEnabled: false, animation: 'none'}}/>
+            <Stack.Screen name="FaseOctogonal" component={FaseOctogonal} options={{}} />
+            <Stack.Screen name="FaseGrupo" component={FaseGrupo} options={{}} />
         </Stack.Navigator>
     )
 

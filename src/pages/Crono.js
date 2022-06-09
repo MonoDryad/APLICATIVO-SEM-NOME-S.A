@@ -8,18 +8,15 @@ import mainHeader from '../styles/mainHeaderStyles'
 import coin from '../assets/images/gcupmoedas.png'
 import userImage from '../assets/images/account.png'
 
-const Cronograma = (props) => {
-    console.log(props.title);
-    const title = props.title !== undefined ? props.title : "Cronograma"
-
+const Cronograma = () => {
     return (
         <View style={styles.container}>
             <Image style={[styles.hexagon, styles.hexagonTwo]} source={hexagon} />
             <Image style={[styles.hexagon, styles.hexagonThree]} source={hexagon} />
             <Image style={[styles.hexagon, styles.hexagonOne]} source={hexagon} />
 
-            <View style={mainHeader.mainHeader}>
-                    <View style={mainHeader.container}>
+            <View style={{paddingLeft: 10, paddingRight: 10, backgroundColor:'#121212',marginTop: 25, flexDirection: 'row',borderBottomColor: '#ffd200', borderBottomWidth: 1,}}>
+                    <View style={[{marginBottom: 10,},mainHeader.container]}>
                          <View style={mainHeader.coinView}>
                               <Image style={mainHeader.coinImage} source={coin}/>
                               <Text style={mainHeader.coinText}>0</Text>
