@@ -27,7 +27,7 @@ export default function Cadastro({ navigation }){
                     <TextInput secureTextEntry={true} style={[styles.insertname, styles.inputLogin]} placeholderTextColor="#6e6e6e"  placeholder="E-mail"></TextInput>
                </View>
 
-               <TouchableOpacity onPress={() => navigation.navigate('CadastroCont')} style={{alignItems: 'center',marginLeft: 300, marginTop: 20}}>
+               <TouchableOpacity onPress={() => navigation.navigate('CadastroCont')} style={{alignItems: 'center',marginLeft: 300, marginTop: 40}}>
                     <Image source={seta} style={styles.seta}/>
                     <Text style={[{marginRight: 10},styles.whiteColor]}>Continuar</Text>
                </TouchableOpacity>
