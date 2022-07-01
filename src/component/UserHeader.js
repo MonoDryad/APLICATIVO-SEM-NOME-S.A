@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {View, Image, Text} from 'react-native'
 import mainHeader from '../styles/userheader'
 
-import getCoins from './Back-Front-end'
+
 
 import coin from '../assets/images/gcupmoedas.png'
 import userImage from '../assets/images/account.png'
@@ -10,7 +10,7 @@ import userImage from '../assets/images/account.png'
 export default function Header(prop){
     let borderColor
     let borderWidth
-    console.log(getCoins)
+
 
     if(prop.border == true){
         borderColor = '#ffd200'
