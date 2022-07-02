@@ -9,6 +9,7 @@ import Noticias from '../pages/Noticias';
 import Home from '../pages/Home'
 
 import {Image} from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons'
 
 import imageHome from '../assets/images/component_home.png'
 import imageTabela from '../assets/images/component_tabela.png'
@@ -23,43 +24,28 @@ function Logado(){
         <Tab.Navigator initialRouteName='Home' screenOptions={{tabBarLabelStyle: {fontSize: 20,},tabBarLabelPosition: 'below-icon', tabBarStyle: { borderColor:'#ffd200',backgroundColor: '#242424', height: 80 },headerShown: false, tabBarActiveTintColor: '#ffd200'}}>
             <Tab.Screen name="Crono" component={Crono} options={{tabBarIcon: ({size,focused,color}) => {
                 return (
-                    <Image
-                        style={{ width: (size + 10), height: (size + 10) }}
-                        source={imageCrono}
-                    />
+                    <MaterialIcons name="calendar" size={32} color="gray"/>
                 )
             },}}/>
             <Tab.Screen name="Tabela" component={Tabela} options={{tabBarIcon: ({size,focused,color}) => {
                 return (
-                    <Image
-                        style={{ width: (size + 10), height: (size + 10) }}
-                        source={imageTabela}
-                    />
+                    <MaterialIcons name="dns-outline" size={32} color="gray"/>
                 )
             },}}/>
             <Tab.Screen name="Home" component={Home} 
             options={{tabBarIcon: ({size,focused,color}) => {
                 return (
-                    <Image
-                        style={{ width: (size + 10), height: (size + 10) }}
-                        source={imageHome}
-                    />
+                    <MaterialIcons name="home" size={32} color="gray"/>
                 )
             },}}/>
             <Tab.Screen name="Votação" component={Votacao} options={{tabBarIcon: ({size,focused,color}) => {
                 return (
-                    <Image
-                        style={{ width: (size + 10), height: (size + 10) }}
-                        source={imageVotacao}
-                    />
+                    <MaterialIcons name="marker-check" size={32} color="gray"/>
                 )
             },}}/>
             <Tab.Screen name="Notícias" component={Noticias} options={{tabBarIcon: ({size,focused,color}) => {
                 return (
-                    <Image
-                        style={{ width: (size + 10), height: (size + 10) }}
-                        source={imageNoticia}
-                    />
+                    <MaterialIcons name="newspaper-variant-multiple" size={32} color="gray"/>
                 )
             },}}/>
 

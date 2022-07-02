@@ -8,10 +8,6 @@ import TabelaRouter from './src/routers/tabelaRouter'
 import BackFront from './src/component/Back-Front-end'
 
 const Stack = createStackNavigator();
-const BackServer = new BackFront()
-console.log(BackServer.getUsers())
-console.log(BackServer.showUsers())
-console.log(BackServer.users)
 
 function App() {
   

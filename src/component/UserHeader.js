@@ -1,11 +1,9 @@
 import React, {useState} from 'react'
 import {View, Image, Text} from 'react-native'
 import mainHeader from '../styles/userheader'
+import Icons from 'react-native-vector-icons/MaterialIcons';
 
-
-
-import coin from '../assets/images/gcupmoedas.png'
-import userImage from '../assets/images/account.png'
+import { loggedUser } from '../pages/Login'
 
 export default function Header(prop){
     let borderColor
@@ -20,19 +18,19 @@ export default function Header(prop){
         borderWidth = 0
     }
 
-    const [coins, setCoins] = useState(0)
-
+    console.log(loggedUser[0].moeda, loggedUser[0].nome)
+    
 
     return(
         <View style={{paddingLeft: 10, paddingRight: 10, backgroundColor:'#121212',paddingTop: 25, flexDirection: 'row',borderBottomColor: borderColor, borderBottomWidth: borderWidth, width: '100%'}}>
             <View style={[{marginBottom: 10,},mainHeader.container]}>
                 <View style={mainHeader.coinView}>
-                    <Image style={mainHeader.coinImage} source={coin}/>
-                    <Text style={mainHeader.coinText}>{coins}</Text>
+                    <Icons style={mainHeader.userImage} name="currency-btc" size={32} color="#ffd200"/>
+                    <Text style={mainHeader.coinText}>{loggedUser[0].moeda}</Text>
                 </View>
                 <View style={mainHeader.userView}>
-                    <Image style={mainHeader.userImage} source={userImage}/>
-                    <Text style={mainHeader.userText}>Usuário</Text>
+                    <Icons style={mainHeader.userImage} name="account-circle" size={32} color="#ffd200"/>
+                    <Text style={mainHeader.userText}>{loggedUser[0].nome}</Text>
                 </View>
             </View>
         </View>

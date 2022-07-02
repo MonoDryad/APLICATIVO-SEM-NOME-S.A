@@ -7,7 +7,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'flex-start',
         justifyContent: 'space-between',
-        width: '85%',
+        width: '80%',
     },
     mainHeader:{
         borderColor: '#ffd200',
@@ -34,10 +34,6 @@ export default StyleSheet.create({
         flexDirection: 'row',
         marginTop: 10,
         alignItems: 'center'
-    },
-    userImage: {
-        width: 30,
-        height: 30,
     },
     userText:{
         color: '#fff',
