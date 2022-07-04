@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {View, Image, Text} from 'react-native'
 import mainHeader from '../styles/userheader'
-import Icons from 'react-native-vector-icons/MaterialIcons';
+import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { loggedUser } from '../pages/Login'
 

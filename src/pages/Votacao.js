@@ -10,15 +10,6 @@ import Copyright from '../component/Copyright'
 
 export default function Votacao({ navigation }){
 
-     let redTeam = '#GOEDW'
-     let blueTeam =  '#GOOKO'
-
-     let redSideContVote = 200
-     let blueSideContVote = 550
-     let voteTotal = redSideContVote + blueSideContVote
-     let blueSidePercentVote = Math.round((blueSideContVote / voteTotal) * 100)
-     let redSidePercentVote = Math.round((redSideContVote / voteTotal) * 100)
-
      return (
           <View style={votacaoStyles.container}>
                <Header border={true}/>

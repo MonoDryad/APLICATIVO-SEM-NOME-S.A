@@ -9,6 +9,8 @@ import noticiaImage from '../assets/images/aviso.png'
 import Header from '../component/UserHeader'
 import Copyright from '../component/Copyright'
 
+import VotingHome from '../component/votingHome'
+
 import globalPage from '../styles/globalPage'
 
 function Home ({navigation}){
@@ -47,7 +49,7 @@ function Home ({navigation}){
                     </View>
                 </View>
                 <Header border={false}/>
-
+                <VotingHome/>
                 <View style={styles.tabelaView}>
                     <View style={styles.tabelaTitleView}>
                         <Text style={styles.tabelaTitleText}>A tabela da {gaiacupEdicao}</Text>
