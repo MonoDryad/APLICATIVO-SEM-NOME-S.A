@@ -19,6 +19,13 @@ export default StyleSheet.create({
         marginTop: 20,
         fontWeight: 'bold'
     },
+
+    subtitulo:{
+        fontSize: 26,
+        textAlign: 'center',
+        marginTop: 20,
+        fontWeight: 'bold'
+    },
     votacao:{
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -72,7 +79,7 @@ export default StyleSheet.create({
         justifyContent: 'center',
     },
     mySliderView:{
-        width: '100%',
+        width: '90vw',
         height: 30,
         borderRadius: 1000,
         backgroundColor: '#ff0000',

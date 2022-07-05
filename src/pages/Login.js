@@ -12,11 +12,28 @@ import Copyright from '../component/Copyright'
 
 export const loggedUser = []
 
+export const games = []
+export const teams = []
+export const votos = []
+
 function Login({ navigation }){
      const [users, setUsers] = useState([])
      
      const [userEmailOrUsername, setUserEmailOrUsername] = useState('')
      const [userPassword, setUserPassword] = useState('')
+
+     const getVotos = async () => {
+          try{
+              const response = await fetch('http://localhost:3000/gaiacup/voto')
+              const data = response.json()
+              data.then(
+                  (val) => votos.push(val)
+              )
+          }catch(error){
+              console.log(error)
+          }
+     }
+
      const getUsers = async () => {
           try{
               const response = await fetch('http://localhost:3000/gaiacup/usuario')
@@ -29,9 +46,38 @@ function Login({ navigation }){
           }
      }
 
+     const getGames = async () => {
+          try{
+              const response = await fetch('http://localhost:3000/gaiacup/partida')
+              const data = response.json()
+              data.then(
+                  (val) => games.push(val)
+              )
+          }catch(error){
+              console.log(error)
+          }
+      }
+  
+     const getTeams = async () => {
+          try{
+              const response = await fetch('http://localhost:3000/gaiacup/equipe')
+              const data = response.json()
+              data.then(
+                  (val) => teams.push(val)
+              )
+          }catch(error){
+              console.log(error)
+          }
+     }
+
      getUsers()
 
+     
+
      const verifyUser = () => {
+          getGames()
+          getTeams()
+          getVotos()
           setTimeout(() => {
                console.log(users, users.find((account) => {return account.email === userEmailOrUsername || userEmailOrUsername === account.nome}))
                if(users.find((account) => {return userEmailOrUsername === account.email || account.nome === userEmailOrUsername }) != undefined){
@@ -53,6 +99,11 @@ function Login({ navigation }){
                }
           }, 1000)   
      }
+
+
+
+ 
+
 
      return (
           <View style={styles.container}>

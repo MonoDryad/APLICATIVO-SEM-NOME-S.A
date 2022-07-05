@@ -17,17 +17,7 @@ function Home ({navigation}){
 
     let tabelaFase = 'Octogonal'
     let gaiacupEdicao = 'Quarta Edição'
-    let redTeam = '#GOEDW'
-    let blueTeam =  '#GOOKO'
-
-    let redSideContVote = 200
-    let blueSideContVote = 550
-    let voteTotal = redSideContVote + blueSideContVote
-    let blueSidePercentVote = Math.round((blueSideContVote / voteTotal) * 100)
-    let redSidePercentVote = Math.round((redSideContVote / voteTotal) * 100)
-
-    console.log(redSideContVote, blueSideContVote, blueSidePercentVote, voteTotal)
-
+    
     return (
         <ScrollView>
             <View style={[globalPage.pageColor, globalPage.pageContainer]}>

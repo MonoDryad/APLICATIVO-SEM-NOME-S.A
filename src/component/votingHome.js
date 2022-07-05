@@ -3,47 +3,45 @@ import {View, Text, Image, TouchableOpacity} from 'react-native'
 
 import styles from '../styles/votacao'
 import globalPage from '../styles/globalPage'
+import { games, teams, votos } from '../pages/Login'
 
-export default function VotingHome(prop) {
-    
+export default function VotingHome({navigation}) {
+    console.log(games, teams)
     let nextGame
-    const [games, setGames] = useState([])
 
-    const getGames = async () => {
-        try{
-            const response = await fetch('http://localhost:3000/gaiacup/partida')
-            const data = response.json()
-            data.then(
-                (val) => setGames(val)
-            )
-        }catch(error){
-            console.log(error)
-        }
-    }
-    getGames()
+    let redTeam
+    let blueTeam
 
+    let redSideContVote
+    let blueSideContVote
+    let voteTotal
+    let blueSidePercentVote
+    let redSidePercentVote
 
-    console.log(games)
     let diaAtual = new Date()
-    nextGame = games.map(function (data){ return Math.abs(parseInt(data.data_jogo.substr(5, 7)) - diaAtual.getDate()) })
-    console.log(nextGame)
+    try{
+        nextGame =  games[0].reduce((a, b) => a.data_jogo - diaAtual.getDate() < b.data_jogo - diaAtual.getDate() ? a : b)
+    }catch(error){
+        console.log(error)
+    }
 
-    let redTeam = "nextGame[0].id_equipe_1"
-    let blueTeam =  "nextGame[0].id_equipe_2"
-
-    let redSideContVote = 200
-    let blueSideContVote = 550
-    let voteTotal = redSideContVote + blueSideContVote
-    let blueSidePercentVote = Math.round((blueSideContVote / voteTotal) * 100)
-    let redSidePercentVote = Math.round((redSideContVote / voteTotal) * 100)
-
+    const callEverything = () => {
+        console.log(nextGame, diaAtual)
+        redTeam = `#GO${teams[0].find((vermelho) => {return vermelho.id_equipe == nextGame.id_equipe_1}).tag}`
+        blueTeam =  `#GO${teams[0].find((azul) => {return azul.id_equipe == nextGame.id_equipe_2}).tag}`
+        console.log(redTeam, blueTeam)
+        redSideContVote = votos[0].find((partida) => {return partida.id_partida == nextGame.id_partida}).quantia_total_votos_vermelho
+        blueSideContVote = votos[0].find((partida) => {return partida.id_partida == nextGame.id_partida}).quantia_total_votos_azul
+        voteTotal = redSideContVote + blueSideContVote
+        blueSidePercentVote = Math.round((blueSideContVote / voteTotal) * 100)
+        redSidePercentVote = Math.round((redSideContVote / voteTotal) * 100)
+    }
+    
+    callEverything()
     return(
         <View style={styles.votingView}>
             <View>
-                <Text style={[globalPage.whiteColor, styles.votingTitle]}>Participe da Votação</Text>
-                <TouchableOpacity onPress={() => navigation.navigate('Votação')}>
-                    <Text style={[globalPage.yellowColor, styles.votingSubtitle]}>Vote agora!</Text>
-                </TouchableOpacity>
+                <Text style={[globalPage.whiteColor, styles.titulo]}>Participe da Votação</Text>
                 <View style={styles.mainVotingView}>
                     <View style={styles.votingCounts}>
                         <View style={styles.viewVotingCounts}>
