@@ -17,6 +17,7 @@ export const teams = []
 export const votos = []
 
 function Login({ navigation }){
+
      const [users, setUsers] = useState([])
      
      const [userEmailOrUsername, setUserEmailOrUsername] = useState('')
@@ -106,7 +107,7 @@ function Login({ navigation }){
 
 
      return (
-          <View style={styles.container}>
+          <View style={[styles.container, {overflow: 'hidden'}]}>
                <Image style={[styles.hexagon, styles.hexagonOne]} source={hexagon}/>
                <Image style={[styles.hexagon, styles.hexagonTwo]} source={hexagon}/>
                <Image style={[styles.hexagon, styles.hexagonThree]} source={hexagon}/>

@@ -47,7 +47,7 @@ export default function CadastroCont({ navigation }){
      }
 
      return (
-          <View style={styles.container}>
+          <View style={[styles.container, {overflow: 'hidden'}]}>
                <Image style={[styles.hexagon, styles.hexagonOne]} source={hexagon}/>
                <Image style={[styles.hexagon, styles.hexagonTwo]} source={hexagon}/>
                <Image style={[styles.hexagon, styles.hexagonThree]} source={hexagon}/>
