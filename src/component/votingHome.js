@@ -6,7 +6,6 @@ import globalPage from '../styles/globalPage'
 import { games, teams, votos } from '../pages/Login'
 
 export default function VotingHome({navigation}) {
-    console.log(games, teams)
     let nextGame
 
     let redTeam

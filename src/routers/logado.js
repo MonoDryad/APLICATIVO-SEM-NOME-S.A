@@ -7,15 +7,7 @@ import Crono from '../pages/Crono';
 import Tabela from '../pages/Tabela';
 import Noticias from '../pages/Noticias';
 import Home from '../pages/Home'
-
-import {Image} from 'react-native';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
-
-import imageHome from '../assets/images/component_home.png'
-import imageTabela from '../assets/images/component_tabela.png'
-import imageCrono from '../assets/images/component_crono.png'
-import imageVotacao from '../assets/images/component_votacao.png'
-import imageNoticia from '../assets/images/component_noticias.png'
 
 const Tab = createBottomTabNavigator();
 
