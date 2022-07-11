@@ -5,6 +5,8 @@ import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native';
 import { loggedUser } from '../pages/Login'
 
+import { windowHeight, windowWidth } from '../../App';
+
 export default function Header(prop){
     let borderColor
     let borderWidth
@@ -24,7 +26,7 @@ export default function Header(prop){
     const [userOptionIcon, setUserOptionIcon] = useState('menu-left')   
 
     return(
-        <View style={{paddingLeft: 20, paddingRight: 20, backgroundColor:'#121212',paddingTop: 25, flexDirection: 'row',borderBottomColor: borderColor, borderBottomWidth: borderWidth, width: '100%'}}>
+        <View style={{paddingLeft: 20, paddingRight: 20, backgroundColor:'#121212',paddingTop: 25, flexDirection: 'row',borderBottomColor: borderColor, borderBottomWidth: borderWidth, width: windowWidth}}>
             <View style={[{marginBottom: 10,},mainHeader.container]}>
                 <View style={mainHeader.coinView}>
                     <Icons style={mainHeader.userImage} name="alpha-g-circle-outline" size={32} color="#ffd200"/>

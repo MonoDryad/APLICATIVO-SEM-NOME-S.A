@@ -4,10 +4,9 @@ import { createStackNavigator } from '@react-navigation/stack'
 import Deslogado from './src/routers/deslogado'
 import Logado from './src/routers/logado'
 import TabelaRouter from './src/routers/tabelaRouter'
-
-import BackFront from './src/component/Back-Front-end'
-
 const Stack = createStackNavigator();
+
+import { Dimensions } from 'react-native';
 
 function App() {
   
@@ -21,5 +20,8 @@ function App() {
     </NavigationContainer>
   )
 }
+
+export const windowWidth = Dimensions.get('window').width;
+export const windowHeight = Dimensions.get('window').height;
 
 export default App

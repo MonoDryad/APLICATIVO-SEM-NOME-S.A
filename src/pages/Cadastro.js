@@ -4,7 +4,7 @@ import gaialogo from '../assets/images/1.png'
 import hexagon from '../assets/images/hexagons.png'
 import seta from '../assets/images/seta.png'
 import styles from '../styles/cadastro'
-
+import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Copyright from '../component/Copyright'
 
 import user from '../assets/images/user.png'
@@ -80,11 +80,11 @@ export default function Cadastro({ navigation }){
                </View>
 
                <TouchableOpacity onPress={() => getUserInformation()} style={{alignItems: 'center',marginLeft: 300, marginTop: 40}}>
-                    <Image source={seta} style={styles.seta}/>
+               <Icons name="arrow-right-bold-circle" color="#ffd200" size={78}/>
                     <Text style={[{marginRight: 10},styles.whiteColor]}>Continuar</Text>
                </TouchableOpacity>
                <TouchableOpacity onPress={() => navigation.goBack()}style={{alignItems: 'center',marginLeft: -300, marginTop: -100}}>
-                    <Image source={seta} style={[{transform: [{ rotate: '180deg'}]},styles.seta]}/>
+                    <Icons name="arrow-right-bold-circle" color="#ffd200" size={78}  style={{transform: [{ rotate: '180deg'}]}}/>
                     <Text style={[{marginRight: 10},styles.whiteColor]}>Voltar</Text>
                </TouchableOpacity>
                <Copyright/>

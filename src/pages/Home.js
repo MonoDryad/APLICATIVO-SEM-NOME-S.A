@@ -12,14 +12,29 @@ import Copyright from '../component/Copyright'
 import VotingHome from '../component/votingHome'
 
 import globalPage from '../styles/globalPage'
+import { games, teams, votos } from '../pages/Login'
+
 
 function Home ({navigation}){
-
+    console.log(games, games[0])
     let tabelaFase = 'Octogonal'
     let gaiacupEdicao = 'Quarta Edição'
-    
-    return (
-        <ScrollView>
+    if( games == undefined){
+        return(
+            <View style={[globalPage.pageColor, globalPage.pageContainer]}>
+                <ScrollView>
+                    <Header border={true}/>
+                    <View style={{flex: 1, alignItems: 'center',alignContent: 'center', justifyContent: 'center', marginTop: '50%', marginBottom: '45%'}}>
+                        <Text style={{fontSize: 24, color: "white"}}>Não há jogos marcados, </Text>
+                        <Text style={{fontSize: 24, color: "white", width:'80%'}}>visite <Text style={{color:'#ffd200', fontSize: 24}}>as notícias</Text> para ver o que vêm por ai.</Text>
+                    </View>
+                    <Copyright/>
+                </ScrollView>
+            </View>
+        )
+    }else{
+        return (
+            <ScrollView>
             <View style={[globalPage.pageColor, globalPage.pageContainer]}>
                 <View style={[styles.header]}>
                     <Text style={styles.headerTitle}>Próximo Jogo</Text>
@@ -95,7 +110,8 @@ function Home ({navigation}){
                 <Copyright/>
             </View>
         </ScrollView>
-    )
+        )
+    }
 }
 
 export default Home
