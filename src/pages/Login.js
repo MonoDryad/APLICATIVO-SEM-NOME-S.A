@@ -88,6 +88,7 @@ function Login({ navigation }){
           getVotos()
           users.push({
                id_usuario: 999,
+               moeda: 200,
                nome: "bonecoTeste",
                senha: "testeSA",
                email: "bonecoTeste@inexorabilis.com"

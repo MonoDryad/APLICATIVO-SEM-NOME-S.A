@@ -79,7 +79,7 @@ export default StyleSheet.create({
         justifyContent: 'center',
     },
     mySliderView:{
-        width: '90vw',
+        width: '90%',
         height: 30,
         borderRadius: 1000,
         backgroundColor: '#ff0000',

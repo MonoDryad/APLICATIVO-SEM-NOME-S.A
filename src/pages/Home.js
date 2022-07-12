@@ -19,14 +19,14 @@ function Home ({navigation}){
     console.log(games, games[0])
     let tabelaFase = 'Octogonal'
     let gaiacupEdicao = 'Quarta Edição'
-    if( games == undefined){
+    if( games[0] === undefined){
         return(
             <View style={[globalPage.pageColor, globalPage.pageContainer]}>
                 <ScrollView>
                     <Header border={true}/>
                     <View style={{flex: 1, alignItems: 'center',alignContent: 'center', justifyContent: 'center', marginTop: '50%', marginBottom: '45%'}}>
                         <Text style={{fontSize: 24, color: "white"}}>Não há jogos marcados, </Text>
-                        <Text style={{fontSize: 24, color: "white", width:'80%'}}>visite <Text style={{color:'#ffd200', fontSize: 24}}>as notícias</Text> para ver o que vêm por ai.</Text>
+                        <Text style={{fontSize: 24, color: "white", width:'80%'}}>visite as <Text style={{color:'#ffd200', fontSize: 24}}>notícias</Text> para ver o que vêm por ai.</Text>
                     </View>
                     <Copyright/>
                 </ScrollView>

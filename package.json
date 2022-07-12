@@ -6,6 +6,7 @@
     "@react-navigation/stack": "^6.2.1",
     "expo": "^44.0.0",
     "material-icons": "^1.11.4",
+    "nearest-date": "^1.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
