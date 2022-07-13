@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Image, Text, ScrollView ,View, TextInput, TouchableOpacity } from 'react-native';
 import gaialogo from '../assets/images/1.png'
 import hexagon from '../assets/images/hexagons.png'
-import seta from '../assets/images/seta.png'
+
 import styles from '../styles/cadastro'
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Copyright from '../component/Copyright'

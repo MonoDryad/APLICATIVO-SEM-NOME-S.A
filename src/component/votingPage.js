@@ -9,43 +9,24 @@ import images from './images'
 
 
 export default function VotingPome({navigation}, props) {
-    console.log(games == undefined, games[0] == undefined)
-    console.log('teste: ' + teams)
-    if( games != undefined){
+    if(games[0] != undefined){
         let nextGame
-
+        
         let redTeam
         let blueTeam
-    
+        
         let redSideContVote
         let blueSideContVote
         let voteTotal
         let blueSidePercentVote
         let redSidePercentVote
-        let logoAzul
-        let logoVermelho
-
-        let fullBlueTeam
-        let fullRedTeam
-    
         let diaAtual = new Date()
-        try{
-            nextGame =  games[0].reduce((a, b) => a.data_jogo - diaAtual.getDate() < b.data_jogo - diaAtual.getDate() ? a : b)
-        }catch(error){
-            console.log(error)
-        }
-    
+        let index
+
         const callEverything = () => {
             console.log(nextGame, diaAtual)
             redTeam = `#GO${teams[0].find((vermelho) => {return vermelho.id_equipe == nextGame.id_equipe_1}).tag}`
             blueTeam =  `#GO${teams[0].find((azul) => {return azul.id_equipe == nextGame.id_equipe_2}).tag}`
-
-            fullRedTeam = teams[0].find((vermelho) => {return vermelho.id_equipe == nextGame.id_equipe_1}).tag
-            fullBlueTeam = teams[0].find((azul) => {return azul.id_equipe == nextGame.id_equipe_2}).tag
-
-            logoVermelho = teams[0].find((vermelho) => {return vermelho.id_equipe == nextGame.id_equipe_1}).id_equipe
-            logoAzul =  teams[0].find((azul) => {return azul.id_equipe == nextGame.id_equipe_2}).id_equipe
-
             console.log(redTeam, blueTeam)
             redSideContVote = votos[0].find((partida) => {return partida.id_partida == nextGame.id_partida}).quantia_total_votos_vermelho
             blueSideContVote = votos[0].find((partida) => {return partida.id_partida == nextGame.id_partida}).quantia_total_votos_azul
@@ -53,8 +34,35 @@ export default function VotingPome({navigation}, props) {
             blueSidePercentVote = Math.round((blueSideContVote / voteTotal) * 100)
             redSidePercentVote = Math.round((redSideContVote / voteTotal) * 100)
         }
-        
+
+        function findClosestPrevDate(arr,target){
+            let dataAt = String(target)
+            let targetDate = new Date(dataAt)
+            console.log('text1: ' + targetDate)
+            let previousDates = arr.filter(e => ( targetDate  - new Date(e)) > 0)
+            console.log('text2: ' + previousDates)
+            let sortedPreviousDates =  previousDates.filter((a,b) => new Date(a) - new Date(b))
+            console.log('text3: ' + sortedPreviousDates)
+            return sortedPreviousDates[0] || null
+        }
+            
+        try{
+            let arr = []
+            console.log('1: ' + JSON.stringify(games))
+            console.log('2: ' + JSON.stringify(games[0]))
+            console.log('3: ' + JSON.stringify(games[0][0]))
+            for(let i=0; i<games[0].length;i++){
+                arr.push(games[0][i].data_jogo.substr(0,10).replace('-', '/').replace('-', '/'))
+            }
+            console.log("teste: ", arr, `${diaAtual.getFullYear()}/${diaAtual.getMonth()}/${diaAtual.getDate()}`)
+            index = findClosestPrevDate(arr, `${diaAtual.getFullYear()}/${diaAtual.getMonth()}/${diaAtual.getDate()}`)
+            console.log(index)
+        }catch(error){
+                console.log(error)
+        }
+   
         callEverything()
+
         return(
             <View style={styles.votingView}>
                 <Text style={votacaoStyles.titulo}>{fullBlueTeam} vs {fullRedTeam}</Text>
