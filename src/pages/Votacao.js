@@ -13,20 +13,18 @@ import VotingPage from '../component/votingPage'
 import { games, teams, votos } from '../pages/Login'
 
 export default function Votacao({ navigation }){
-
-
-
-
-
      if(games[0] != undefined){
 
 
         return (
+          <ScrollView>
                <View style={votacaoStyles.container}>
                     <Header border={true}/>
-                    <VotingPage></VotingPage>
+                    <VotingPage identificador='0' next='0'></VotingPage>
+                    <VotingPage identificador='0' next='1'></VotingPage>
                     <Copyright/>
                </View>
+          </ScrollView>
           )
      } else{
           return(

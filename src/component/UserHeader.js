@@ -33,7 +33,7 @@ export default function Header(prop){
                     <Text style={mainHeader.coinText}>{loggedUser[0].moeda}</Text>
                 </View>
                 <View>
-                    <TouchableHighlight onPress={() => navigation.navigate('UserConfig')} >
+                    <TouchableHighlight onPress={() => navigation.navigate('TabelaRouter', {screen: 'UserConfig'})} >
                         <View style={[{borderBottomWidth: 1, borderColor: '#fff'}, mainHeader.userView]}>
                             <Icons style={mainHeader.userImage} name="account-circle" size={32} color="#ffd200"/>
                             <Text style={mainHeader.userText}>{loggedUser[0].nome}</Text>

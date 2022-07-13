@@ -14,6 +14,7 @@ import password from '../assets/images/password.png'
 
 import Copyright from '../component/Copyright'
 
+
 export const loggedUser = []
 
 export const games = []
@@ -93,64 +94,77 @@ function Login({ navigation }){
                senha: "testeSA",
                email: "bonecoTeste@inexorabilis.com"
           })
-          // if(teams.length < 1){
-          //      teams.push([   
-          //           {
-          //                "id_equipe": 1,
-          //                "nome": "Orange Kingdom Umayyad",
-          //                "tag": "OKU",
-          //                "vitoria": 2,
-          //                "derrota": 1,
-          //                "posicao": 1
-          //           },
-          //           {
-          //                "id_equipe": 2,
-          //                "nome": "Inexorabilis e-sports",
-          //                "tag": "IXS",
-          //                "vitoria": 2,
-          //                "derrota": 1,
-          //                "posicao": 2
-          //           },
-          //           {
-          //                "id_equipe": 3,
-          //                "nome": "Lotus Gaming",
-          //                "tag": "LG",
-          //                "vitoria": 1,
-          //                "derrota": 2,
-          //                "posicao": 3
-          //           }
-          //      ])
-          //      games.push([
-          //           {
-          //                "id_partida": 10,
-          //                "data_jogo": "2022-07-05T03:00:00.000Z",
-          //                "hora_jogo": "19:00:00",
-          //                "id_equipe_1": 1,
-          //                "id_equipe_2": 3
-          //            },
-          //            {
-          //                "id_partida": 11,
-          //                "data_jogo": "2022-08-05T03:00:00.000Z",
-          //                "hora_jogo": "19:00:00",
-          //                "id_equipe_1": 1,
-          //                "id_equipe_2": 3
-          //            }
-          //           ])
-          //      votos.push([
-          //           {
-          //               "id_voto": 1,
-          //               "id_partida": 11,
-          //               "quantia_total_votos_azul": 300,
-          //               "quantia_total_votos_vermelho": 200
-          //           },
-          //           {
-          //               "id_voto": 2,
-          //               "id_partida": 10,
-          //               "quantia_total_votos_azul": 300,
-          //               "quantia_total_votos_vermelho": 200
-          //           }
-          //       ])
-          // }
+          if(teams.length < 1){
+               teams.push([   
+                    {
+                         id_equipe: 1,
+                         nome: "Orange Kingdom Umayyad",
+                         tag: "OKU",
+                         vitoria: 2,
+                         derrota: 1,
+                         posicao: 1
+                    },
+                    {
+                         id_equipe: 2,
+                         nome: "Inexorabilis e-sports",
+                         tag: "IXS",
+                         vitoria: 2,
+                         derrota: 1,
+                         posicao: 2
+                    },
+                    {
+                         id_equipe: 3,
+                         nome: "Lotus Gaming",
+                         tag: "LG",
+                         vitoria: 1,
+                         derrota: 2,
+                         posicao: 3
+                    }
+               ])
+               games.push([
+                    {
+                         id_partida: 10,
+                         data_jogo: "2022-07-15T03:00:00.000Z",
+                         hora_jogo: "19:00:00",
+                         id_equipe_1: 1,
+                         id_equipe_2: 3
+                     },
+                     {
+                         id_partida: 11,
+                         data_jogo: "2022-08-17T03:00:00.000Z",
+                         hora_jogo: "19:00:00",
+                         id_equipe_1: 2,
+                         id_equipe_2: 3
+                     },
+                     {
+                         id_partida: 12,
+                         data_jogo: "2022-08-17T03:00:00.000Z",
+                         hora_jogo: "19:00:00",
+                         id_equipe_1: 2,
+                         id_equipe_2: 1
+                     }
+                    ])
+               votos.push([
+                    {
+                        id_voto: 1,
+                        id_partida: 11,
+                        quantia_total_votos_azul: 300,
+                        quantia_total_votos_vermelho: 200
+                    },
+                    {
+                        id_voto: 2,
+                        id_partida: 10,
+                        quantia_total_votos_azul: 600,
+                        quantia_total_votos_vermelho: 200
+                    },
+                    {
+                        id_voto: 3,
+                        id_partida: 12,
+                        quantia_total_votos_azul: 500,
+                        quantia_total_votos_vermelho: 300
+                    }
+                ])
+          }
 
           
 

@@ -6,7 +6,12 @@ export default StyleSheet.create({
         backgroundColor: '#121212',
         alignItems: 'center',
         alignContent: 'center',
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start',
+        width: '100%'
+    },
+    votingView:{
+        marginTop: 20,
+        width: '90%'
     },
     mid:{
         marginLeft: 30,
@@ -79,7 +84,7 @@ export default StyleSheet.create({
         justifyContent: 'center',
     },
     mySliderView:{
-        width: '90%',
+        width: '100%',
         height: 30,
         borderRadius: 1000,
         backgroundColor: '#ff0000',

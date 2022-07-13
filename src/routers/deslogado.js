@@ -4,8 +4,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from '../pages/Login';
 import Cadastro from '../pages/Cadastro';
 import CadastroCont from '../pages/CadastroCont';
-import Config from '../pages/Config'
-
 
 
 
@@ -17,7 +15,7 @@ function Deslogado(){
             <Stack.Screen name="Login" component={Login} options={{ animationEnabled: false, animation: 'none'}}/>
             <Stack.Screen name="Cadastro" component={Cadastro} options={{ animationEnabled: false, animation: 'none'}}/>
             <Stack.Screen name="CadastroCont" component={CadastroCont} options={{ animationEnabled: false, animation: 'none'}}/>
-            <Stack.Screen name="UserConfig" component={Config}/>
+
         </Stack.Navigator>
     )
 

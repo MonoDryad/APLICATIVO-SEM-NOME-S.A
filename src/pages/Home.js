@@ -9,14 +9,13 @@ import noticiaImage from '../assets/images/aviso.png'
 import Header from '../component/UserHeader'
 import Copyright from '../component/Copyright'
 
-import VotingHome from '../component/votingHome'
+import VotingPage from '../component/votingPage'
 
 import globalPage from '../styles/globalPage'
-import { games, teams, votos } from '../pages/Login'
-
+import { games, loggedUser, teams, votos } from '../pages/Login'
 
 function Home ({navigation}){
-    console.log(games, games[0])
+
     let tabelaFase = 'Octogonal'
     let gaiacupEdicao = 'Quarta Edição'
     if( games[0] === undefined){
@@ -36,32 +35,18 @@ function Home ({navigation}){
         return (
             <ScrollView>
             <View style={[globalPage.pageColor, globalPage.pageContainer]}>
-                <View style={[styles.header]}>
-                    <Text style={styles.headerTitle}>Próximo Jogo</Text>
-                    <View style={styles.headerGames}>
-                        <View>
-                            <Image style={styles.teamHeaderImage} source={time1}/>
-                            <Text style={styles.headerTeamFrag}>2/0</Text>
-                        </View>
-                        <View style={styles.headerSubView}>
-                            <Text style={[styles.headerGamesInfo, styles.headerGamesVS]}>VS</Text>
-                            <Text style={styles.headerGamesInfo}>19:00 (MD1)</Text>
-                        </View>
-                        <View>
-                            <Image style={styles.teamHeaderImage} source={time2}/>
-                            <Text style={styles.headerTeamFrag}>0/2</Text>
-                        </View>
-                    </View>
-                </View>
-                <Header border={false}/>
-                <VotingHome/>
+                <Text style={{fontSize: 26}}>Bem-vindo {loggedUser[0].nome}</Text>
+                <Header border={true}/>
+                <VotingPage identificador='1' next='0'/>
                 <View style={styles.tabelaView}>
                     <View style={styles.tabelaTitleView}>
-                        <Text style={styles.tabelaTitleText}>A tabela da {gaiacupEdicao}</Text>
-                        <Text style={styles.tabelaSubTitleText}>Fase {tabelaFase} -
+
                         <TouchableOpacity onPress={() => navigation.navigate('Tabela')}>
+                            <Text style={styles.tabelaTitleText}>A tabela da {gaiacupEdicao}</Text>
+                            <Text style={styles.tabelaSubTitleText}>Fase {tabelaFase} -
                             <Text style={[styles.tabelaSubTitleText,globalPage.yellowColor]}> Veja mais!</Text>
-                        </TouchableOpacity></Text>
+                            </Text>
+                        </TouchableOpacity>
                     </View>
                     <View style={styles.tabelaTimeSpacing}>
                         <View style={styles.tabelaTimeView}>
