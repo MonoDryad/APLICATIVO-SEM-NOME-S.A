@@ -8,50 +8,6 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    header: {
-        backgroundColor: '#242424',
-        maxHeight: 300,
-        borderColor: '#ffd200',
-        borderBottomWidth: 2,
-        width: '100%'
-    },
-    headerTitle: {
-        color: '#ffd200',
-        fontSize: 36,
-        textAlign: 'center',
-        marginTop: 30,
-        fontWeight: 'bold'
-    },
-    headerGames:{
-        marginTop: 21,
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'row'
-    },
-    headerGamesInfo:{
-        color: '#ffd200'
-    },
-    headerGamesVS:{
-        fontSize: 42
-    },
-    teamHeaderImage:{
-        width: 100,
-        height: 100,
-        marginLeft: 30,
-        marginRight: 30,
-    },
-    headerSubView: {
-        alignItems: 'center',
-    },
-    headerTeamFrag:{
-        color: 'white',
-        textAlign: 'center'
-    },
-    headerMaisInformacao:{
-        marginTop: 10,
-        fontSize: 26,
-        color: '#ffd200',
-    },
     votingView:{
         alignItems: 'center',
         borderBottomColor: '#ffd200',

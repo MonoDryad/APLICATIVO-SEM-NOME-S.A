@@ -19,7 +19,8 @@ export default StyleSheet.create({
           fontSize: 24,
           color: '#fff',
           fontWeight: 'bold',
-          marginTop: 15
+          marginTop: 15,
+
      },
      
      signup: {

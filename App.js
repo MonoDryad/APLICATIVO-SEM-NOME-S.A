@@ -4,12 +4,13 @@ import { createStackNavigator } from '@react-navigation/stack'
 import Deslogado from './src/routers/deslogado'
 import Logado from './src/routers/logado'
 import TabelaRouter from './src/routers/tabelaRouter'
-const Stack = createStackNavigator();
 
 import { Dimensions } from 'react-native';
 
+const Stack = createStackNavigator();
+
 function App() {
-  
+
   return(
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false, }}>

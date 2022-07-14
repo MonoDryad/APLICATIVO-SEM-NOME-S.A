@@ -35,8 +35,8 @@ function Home ({navigation}){
         return (
             <ScrollView>
             <View style={[globalPage.pageColor, globalPage.pageContainer]}>
-                <Text style={{fontSize: 26}}>Bem-vindo {loggedUser[0].nome}</Text>
                 <Header border={true}/>
+                <Text style={{fontSize: 32, color: 'white', fontWeight:'bold', marginBottom: 30, marginTop: 30}}>Bem-vindo <Text style={{color: '#ffd200', fontWeight:'bold'}}>{loggedUser[0].nome}</Text></Text>
                 <VotingPage identificador='1' next='0'/>
                 <View style={styles.tabelaView}>
                     <View style={styles.tabelaTitleView}>
