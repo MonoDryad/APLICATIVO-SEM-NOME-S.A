@@ -4,10 +4,14 @@ import mainHeader from '../styles/userheader'
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native';
 import { loggedUser } from '../pages/Login'
+import { Dimensions } from 'react-native';
 
-import { windowHeight, windowWidth } from '../../App';
 
 export default function Header(prop){
+    
+    let windowWidth = Dimensions.get('window').width;
+    let windowHeight = Dimensions.get('window').height;
+    
     let borderColor
     let borderWidth
 

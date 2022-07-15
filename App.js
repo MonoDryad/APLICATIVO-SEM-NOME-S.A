@@ -5,7 +5,6 @@ import Deslogado from './src/routers/deslogado'
 import Logado from './src/routers/logado'
 import TabelaRouter from './src/routers/tabelaRouter'
 
-import { Dimensions } from 'react-native';
 
 const Stack = createStackNavigator();
 
@@ -21,8 +20,5 @@ function App() {
     </NavigationContainer>
   )
 }
-
-export const windowWidth = Dimensions.get('window').width;
-export const windowHeight = Dimensions.get('window').height;
 
 export default App

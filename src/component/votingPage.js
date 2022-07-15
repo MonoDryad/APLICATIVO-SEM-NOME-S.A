@@ -3,15 +3,16 @@ import {View, Text, Image, TouchableOpacity, Modal, TextInput, Pressable} from '
 import votacaoStyles from '../styles/votacao'
 import styles from '../styles/votacao'
 import globalPage from '../styles/globalPage'
-import { games, teams, votos } from '../pages/Login'
+import { games, loggedUser, teams, votos } from '../pages/Login'
 // import { bigInfoTeamArray } from './teamLogic'
 import images from './images'
 
-export default function VotingHome(props) {
+export default function VotingPage(props) {
+    console.log(votos)
     console.log(props)
     const [modalBlue, setModalBlue] = useState(false)
     const [modalRed, setModalRed] = useState(false)
-    const [voto, setVoto] = useState('')
+    const [voto, setVoto] = useState(0)
 
     let nextGame
         
@@ -32,31 +33,37 @@ export default function VotingHome(props) {
     let diaAtual = new Date()
     let index
     let idx
+    let side
 
-    const confirmChanges = (side) => {
-        switch(side){
-            case 'red':
-                if(voto != 0){
-                    redSideContVote += voto
-                    setVoto(0)
-                }
-                break
-            case 'blue':
-                if(voto != 0){
-                    blueSideContVote += voto
-                    setVoto(0)
-                }
-                break
+    const updtVoto = async () => {
+        try{
+            const response = await fetch('http://localhost:3000/gaiacup/voto')
+            const data = response.json()
+            data.then(
+                (val) => votos[0].push(val)
+            )
+        }catch(error){
+            console.log(error)
         }
-        
-        voteTotal = redSideContVote + blueSideContVote
-        blueSidePercentVote = Math.round((blueSideContVote / voteTotal) * 100)
-        redSidePercentVote = Math.round((redSideContVote / voteTotal) * 100)
-    }
-
+   }
     if(games[0] != undefined){
 
-
+        try{
+            let arr = []
+            console.log('1: ' + JSON.stringify(games))
+            console.log('2: ' + JSON.stringify(games[0]))
+            console.log('3: ' + JSON.stringify(games[0][0]))
+            for(let i=0; i<games[0].length;i++){
+                arr.push(games[0][i].data_jogo.substr(0,10).replace('-', '/').replace('-', '/'))
+            }
+            console.log("teste: ", arr, `${diaAtual.getFullYear()}/${diaAtual.getMonth()}/${diaAtual.getDate()}`)
+            // index = findClosestPrevDate(arr, `${diaAtual.getFullYear()}/${diaAtual.getMonth()}/${diaAtual.getDate()}`)
+            index = arr.map(d => Math.abs(new Date() - new Date(d).getTime()))
+            idx = index.indexOf(Math.min(...index))
+            console.log('VENCEDOR ' + arr[idx], games[0][(idx + props.next), arr, idx])
+        }catch(error){
+                console.log(error)
+        }
         const callEverything = () => {
             console.log('de', idx)
             if(props.next != '0'){
@@ -64,7 +71,7 @@ export default function VotingHome(props) {
                 console.log('çe', idx, props.next)
             }
             nextGame = games[0][idx]
-            console.log(nextGame, diaAtual)
+            console.log('reidede', nextGame, diaAtual)
             redTeam = `#GO${teams[0].find((vermelho) => {return vermelho.id_equipe == nextGame.id_equipe_2}).tag}`
             blueTeam =  `#GO${teams[0].find((azul) => {return azul.id_equipe == nextGame.id_equipe_1}).tag}`
 
@@ -91,25 +98,60 @@ export default function VotingHome(props) {
 
         }
             
-        try{
-            let arr = []
-            console.log('1: ' + JSON.stringify(games))
-            console.log('2: ' + JSON.stringify(games[0]))
-            console.log('3: ' + JSON.stringify(games[0][0]))
-            for(let i=0; i<games[0].length;i++){
-                arr.push(games[0][i].data_jogo.substr(0,10).replace('-', '/').replace('-', '/'))
-            }
-            console.log("teste: ", arr, `${diaAtual.getFullYear()}/${diaAtual.getMonth()}/${diaAtual.getDate()}`)
-            // index = findClosestPrevDate(arr, `${diaAtual.getFullYear()}/${diaAtual.getMonth()}/${diaAtual.getDate()}`)
-            index = arr.map(d => Math.abs(new Date() - new Date(d).getTime()))
-            idx = index.indexOf(Math.min(...index))
-            console.log('VENCEDOR ' + arr[idx], games[0][(idx + props.next), arr, idx])
-        }catch(error){
-                console.log(error)
-        }
+
 
         
-   
+        const confirmChanges = async (ref) => {
+            callEverything()
+            if(loggedUser[0].moeda > voto){
+                if(ref == 'red'){
+                    setModalRed(!modalRed)
+                    console.log(voto, redSideContVote)
+                    const requestOptions = {
+                        method:'PUT',
+                        headers:{'Content-type': 'application/json'},
+                        body: JSON.stringify({
+                            id_partida: votos[0].find((partida) => {return partida.id_partida == nextGame.id_partida}).id_partida, 
+                            quantia_total_votos_azul: parseInt(blueSideContVote), 
+                            quantia_total_votos_vermelho: parseInt(redSideContVote) + parseInt(voto),
+                        })
+                    }
+                    try{
+                        await fetch('http://localhost:3000/gaiacup/voto/' + votos[0].find((partida) => {return partida.id_partida == nextGame.id_partida}).id_voto, requestOptions)
+                        console.log('await: ', votos[0].find((partida) => {return partida.id_partida == nextGame.id_partida}).id_voto)
+                    } catch (error){
+                        console.log(error)
+                    }
+                    setVoto(0)
+                }else{
+                    setModalBlue(!modalBlue)
+                    console.log(voto, blueSideContVote)
+                    blueSideContVote += voto
+                    console.log(blueSideContVote)
+                    const requestOptions = {
+                        method:'PUT',
+                        headers:{'Content-type': 'application/json'},
+                        body: JSON.stringify({
+                            id_partida: votos[0].find((partida) => {return partida.id_partida == nextGame.id_partida}).id_partida, 
+                            quantia_total_votos_azul: parseInt(blueSideContVote) + parseInt(voto), 
+                            quantia_total_votos_vermelho: parseInt(redSideContVote),
+                        })
+                    }
+                    try{
+                        await fetch('http://localhost:3000/gaiacup/voto/' + votos[0].find((partida) => {return partida.id_partida == nextGame.id_partida}).id_voto, requestOptions)
+                        
+                    } catch (error){
+                        console.log(error)
+                    }
+                setVoto(0)
+                }
+                voteTotal = redSideContVote + blueSideContVote
+                blueSidePercentVote = Math.round((blueSideContVote / voteTotal) * 100)
+                redSidePercentVote = Math.round((redSideContVote / voteTotal) * 100)
+            
+            }
+
+        }
         callEverything()
         if(props.identificador == '1'){
             return(
@@ -159,7 +201,7 @@ export default function VotingHome(props) {
                                 </View>
                                 <Pressable
                                     style={[styles.button, styles.buttonClose]}
-                                    onPress={() => {setModalBlue(!modalBlue); confirmChanges('blue');}}
+                                    onPress={() => {confirmChanges('blue')}}
                                     >
                                      <Text style={[styles.textStyle, {marginTop: 10,borderRadius: 10,color:'white',padding: 10,backgroundColor:'#5e4e00'}]}>Confirmar votação</Text>
                                 </Pressable>
@@ -185,11 +227,11 @@ export default function VotingHome(props) {
                                 <View style={{marginTop: 35}}>
                                     <Text style={[{color:'#fff', marginTop: 10, marginBottom: 10, fontSize:24, fontWeight: 'bold'}]}>Vote no time {fullRedTeam}</Text>
                                     <Text style={[{color:'#fff', fontSize:19,fontWeight: 'bold'}]}>{redTeam}</Text>
-                                    <TextInput placeholder='Insira o valor' placeholderTextColor='#6e6e6e' keyboardType='phone-pad' onTextChange={(text) => setVoto(text)} defaultValue={voto} style={{backgroundColor: '#121212',color: '#fff', fontSize:23 ,marginTop: 5, borderBottomColor: '#3b3939', borderBottomWidth: 1, borderLeftColor: '#3b3939', borderLeftWidth: 1,}}/>
+                                    <TextInput placeholder='Insira o valor' placeholderTextColor='#6e6e6e' keyboardType='phone-pad' onChangeText={text => setVoto(text)} value={voto} style={{backgroundColor: '#121212',color: '#fff', fontSize:23 ,marginTop: 5, borderBottomColor: '#3b3939', borderBottomWidth: 1, borderLeftColor: '#3b3939', borderLeftWidth: 1,}}/>
                                 </View>
                                 <Pressable
                                     style={[styles.button, styles.buttonClose]}
-                                    onPress={() => {setModalRed(!modalRed); confirmChanges('red');}}
+                                    onPress={() => {confirmChanges('red')}}
                                     >
                                     <Text style={[styles.textStyle, {marginTop: 10,borderRadius: 10,color:'white',padding: 10,backgroundColor:'#5e4e00'}]}>Confirmar votação</Text>
                                 </Pressable>

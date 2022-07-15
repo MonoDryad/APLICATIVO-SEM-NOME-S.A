@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { Alert, StyleSheet, Image, Text, ScrollView ,View, TextInput, TouchableOpacity, Modal, Pressable  } from 'react-native';
+import { Alert, StyleSheet, Image, Text, ScrollView ,View, TextInput, TouchableOpacity, Modal, Pressable, Dimensions  } from 'react-native';
 import styles from '../styles/cadastro'
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
-
-import { windowHeight, windowWidth } from '../../App';
 
 import Copyright from '../component/Copyright'
 
 function Config({ navigation }){
+
+    let windowWidth = Dimensions.get('window').width;
+    let windowHeight = Dimensions.get('window').height;
+    
     
     const [users, setUsers] = useState([])
     
