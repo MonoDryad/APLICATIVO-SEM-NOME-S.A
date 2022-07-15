@@ -37,61 +37,6 @@ function Home ({navigation}){
             <View style={[globalPage.pageColor, globalPage.pageContainer]}>
                 <Header border={true}/>
                 <Text style={{fontSize: 32, color: 'white', fontWeight:'bold', marginBottom: 30, marginTop: 30}}>Bem-vindo <Text style={{color: '#ffd200', fontWeight:'bold'}}>{loggedUser[0].nome}</Text></Text>
-                <VotingPage identificador='1' next='0'/>
-                <View style={styles.tabelaView}>
-                    <View style={styles.tabelaTitleView}>
-
-                        <TouchableOpacity onPress={() => navigation.navigate('Tabela')}>
-                            <Text style={styles.tabelaTitleText}>A tabela da {gaiacupEdicao}</Text>
-                            <Text style={styles.tabelaSubTitleText}>Fase {tabelaFase} -
-                            <Text style={[styles.tabelaSubTitleText,globalPage.yellowColor]}> Veja mais!</Text>
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.tabelaTimeSpacing}>
-                        <View style={styles.tabelaTimeView}>
-                            <Text style={styles.teamNameTabela}>1º</Text>
-                            <Image style={styles.teamLogoImage} source={time2}/>
-                            <View>
-                                <Text style={styles.teamNameTabela}>NEO Akihabara</Text>
-                                <Text style={styles.teamSiglaTabela}>#GOAKH</Text>
-                            </View>
-                        </View>
-                        <View style={styles.tabelaTimeView}>
-                            <Text style={styles.teamNameTabela}>2º</Text>
-                            <Image style={styles.teamLogoImage} source={time1}/>
-                            <View>
-                                <Text style={styles.teamNameTabela}>Eight Divine Ways</Text>
-                                <Text style={styles.teamSiglaTabela}>#GOEDW</Text>
-                            </View>
-                        </View>
-                        <View style={styles.tabelaTimeView}>
-                            <Text style={styles.teamNameTabela}>3º</Text>
-                            <Image style={styles.teamLogoImage} source={time1}/>
-                            <View>
-                                <Text style={styles.teamNameTabela}>Eight Divine Ways Black</Text>
-                                <Text style={styles.teamSiglaTabela}>#GOEDWB</Text>
-                            </View>
-                        </View>
-                    </View>
-                </View>
-                <View style={styles.noticiasMainView}>
-                    <Text style={styles.noticiasTitleText}>Notícias</Text>
-                    <View style={styles.noticiasSubView}>
-                        <TouchableOpacity>
-                            <View styles={styles.noticiaView}>
-                                <Image style={styles.imageNoticia} source={noticiaImage}/>
-                                <Text style={styles.textNoticia}>Personagem desabilitado</Text>
-                            </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={{marginLeft: 10}}>
-                            <View styles={styles.noticiaView}>
-                                <Image style={styles.imageNoticia} source={noticiaImage}/>
-                                <Text style={styles.textNoticia}>Jogador Banido</Text>
-                            </View>
-                        </TouchableOpacity>
-                    </View>
-                </View>
                 <Copyright/>
             </View>
         </ScrollView>

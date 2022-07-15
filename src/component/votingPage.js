@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {View, Text, Image, TouchableOpacity} from 'react-native'
+import {View, Text, Image, TouchableOpacity, Modal, TextInput, Pressable} from 'react-native'
 import votacaoStyles from '../styles/votacao'
 import styles from '../styles/votacao'
 import globalPage from '../styles/globalPage'
@@ -9,27 +9,53 @@ import images from './images'
 
 export default function VotingHome(props) {
     console.log(props)
+    const [modalBlue, setModalBlue] = useState(false)
+    const [modalRed, setModalRed] = useState(false)
+    const [voto, setVoto] = useState('')
+
+    let nextGame
+        
+    let redTeam
+    let blueTeam
+
+    let fullBlueTeam
+    let fullRedTeam
+    
+    let logoAzul
+    let logoVermelho
+    
+    let redSideContVote
+    let blueSideContVote
+    let voteTotal
+    let blueSidePercentVote
+    let redSidePercentVote
+    let diaAtual = new Date()
+    let index
+    let idx
+
+    const confirmChanges = (side) => {
+        switch(side){
+            case 'red':
+                if(voto != 0){
+                    redSideContVote += voto
+                    setVoto(0)
+                }
+                break
+            case 'blue':
+                if(voto != 0){
+                    blueSideContVote += voto
+                    setVoto(0)
+                }
+                break
+        }
+        
+        voteTotal = redSideContVote + blueSideContVote
+        blueSidePercentVote = Math.round((blueSideContVote / voteTotal) * 100)
+        redSidePercentVote = Math.round((redSideContVote / voteTotal) * 100)
+    }
 
     if(games[0] != undefined){
-        let nextGame
-        
-        let redTeam
-        let blueTeam
 
-        let fullBlueTeam
-        let fullRedTeam
-
-        let logoAzul
-        let logoVermelho
-        
-        let redSideContVote
-        let blueSideContVote
-        let voteTotal
-        let blueSidePercentVote
-        let redSidePercentVote
-        let diaAtual = new Date()
-        let index
-        let idx
 
         const callEverything = () => {
             console.log('de', idx)
@@ -81,6 +107,8 @@ export default function VotingHome(props) {
         }catch(error){
                 console.log(error)
         }
+
+        
    
         callEverything()
         if(props.identificador == '1'){
@@ -113,12 +141,72 @@ export default function VotingHome(props) {
             )
         }else{
             return(
-                <View style={{borderBottomColor: '#ffd200', borderBottomWidth: 1, width: '100%', flex: 1, alignItems: 'center',marginTop: 50, paddingBottom: 50}}>
+                <View style={{borderBottomColor: '#ffd200', borderBottomWidth: 1, width: '100%', flex: 1, alignItems: 'center',marginTop: 50, paddingBottom: 150}}>
+                    <Modal
+                        animationType="fade"
+                        transparent={true}
+                        visible={modalBlue}
+                        onRequestClose={() => {
+                            setModalBlue(!modalBlue);
+                        }}
+                    >
+                        <View style={{ backgroundColor:'#131313', flex: 1}}>
+                            <View style={{margin: 10}}>
+                                <View style={{marginTop: 35}}>
+                                    <Text style={[{color:'#fff', marginTop: 10, marginBottom: 10, fontSize:24, fontWeight: 'bold'}]}>Vote no time {fullBlueTeam} </Text>
+                                    <Text style={[{color:'#fff', fontSize:19,fontWeight: 'bold'}]}>{blueTeam}</Text>
+                                    <TextInput placeholder='Insira o valor' placeholderTextColor='#6e6e6e' keyboardType='phone-pad' onTextChange={(text) => setVoto(text)} defaultValue={voto} style={{backgroundColor: '#121212',color: '#fff', fontSize:23 ,marginTop: 5, borderBottomColor: '#3b3939', borderBottomWidth: 1, borderLeftColor: '#3b3939', borderLeftWidth: 1,}}/>
+                                </View>
+                                <Pressable
+                                    style={[styles.button, styles.buttonClose]}
+                                    onPress={() => {setModalBlue(!modalBlue); confirmChanges('blue');}}
+                                    >
+                                     <Text style={[styles.textStyle, {marginTop: 10,borderRadius: 10,color:'white',padding: 10,backgroundColor:'#5e4e00'}]}>Confirmar votação</Text>
+                                </Pressable>
+                                <Pressable
+                                    style={[styles.button, styles.buttonClose]}
+                                    onPress={() => setModalBlue(!modalBlue)}
+                                    >
+                                    <Text style={[styles.textStyle, {marginTop: 10,borderRadius: 10,color:'white',padding: 10,backgroundColor:'#620000'}]}>Voltar e descartar a votação</Text>
+                                </Pressable>
+                            </View>
+                        </View>
+                    </Modal>
+                    <Modal
+                        animationType="fade"
+                        transparent={true}
+                        visible={modalRed}
+                        onRequestClose={() => {
+                            setModalRed(!modalRed);
+                        }}
+                    >
+                        <View style={{ backgroundColor:'#131313', flex: 1, height: '200px'}}>
+                            <View style={{margin: 10}}>
+                                <View style={{marginTop: 35}}>
+                                    <Text style={[{color:'#fff', marginTop: 10, marginBottom: 10, fontSize:24, fontWeight: 'bold'}]}>Vote no time {fullRedTeam}</Text>
+                                    <Text style={[{color:'#fff', fontSize:19,fontWeight: 'bold'}]}>{redTeam}</Text>
+                                    <TextInput placeholder='Insira o valor' placeholderTextColor='#6e6e6e' keyboardType='phone-pad' onTextChange={(text) => setVoto(text)} defaultValue={voto} style={{backgroundColor: '#121212',color: '#fff', fontSize:23 ,marginTop: 5, borderBottomColor: '#3b3939', borderBottomWidth: 1, borderLeftColor: '#3b3939', borderLeftWidth: 1,}}/>
+                                </View>
+                                <Pressable
+                                    style={[styles.button, styles.buttonClose]}
+                                    onPress={() => {setModalRed(!modalRed); confirmChanges('red');}}
+                                    >
+                                    <Text style={[styles.textStyle, {marginTop: 10,borderRadius: 10,color:'white',padding: 10,backgroundColor:'#5e4e00'}]}>Confirmar votação</Text>
+                                </Pressable>
+                                <Pressable
+                                    style={[styles.button, styles.buttonClose]}
+                                    onPress={() => setModalRed(!modalRed)}
+                                    >
+                                    <Text style={[styles.textStyle, {marginTop: 10,borderRadius: 10,color:'white',padding: 10,backgroundColor:'#620000'}]}>Voltar e descartar a votação</Text>
+                                </Pressable>
+                            </View>
+                        </View>
+                    </Modal>
                     <View style={[styles.votingView]}>
                         <Text style={{textAlign: 'center', color: '#fff', fontSize: 32, fontWeight: 'bold', position: 'absolute', marginTop: -40,marginLeft: 30}}>{fullBlueTeam}</Text><Text style={{textAlign: 'center', color: '#fff', fontSize: 32, fontWeight: 'bold', position: 'absolute', marginTop: -40, right: 40}}>{fullRedTeam}</Text>
                         <View style={votacaoStyles.votacao}>
                             <View>
-                                <TouchableOpacity style={{alignItems: 'center'}}>
+                                <TouchableOpacity onPress={() => setModalBlue(!modalBlue)} style={{alignItems: 'center'}}>
                                         <Image source={images(logoAzul)} style={votacaoStyles.time1}></Image>
                                         <Text style={votacaoStyles.botaoA}>Votar</Text>
                                 </TouchableOpacity>
@@ -127,7 +215,7 @@ export default function VotingHome(props) {
                                 <Text style={votacaoStyles.vs}>VS</Text>
                             </View>
                             <View>
-                                <TouchableOpacity style={{alignItems: 'center'}}>
+                                <TouchableOpacity onPress={() => setModalRed(!modalRed)} style={{alignItems: 'center'}}>
                                         <Image source={images(logoVermelho)} style={votacaoStyles.time2}></Image>
                                         <Text style={votacaoStyles.botaoV}>Votar</Text>
                                 </TouchableOpacity>
