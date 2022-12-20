@@ -1,4 +1,4 @@
-# Gaia Cup | O App
+# Tourneament | O App
 
 <p>
   <!-- iOS -->
@@ -13,15 +13,14 @@
 
 # Funções
 
-## Sistema de Moeda (GCUPS)
-
-- O usuário começa com 200 gcups;
-- A cada 24 horas (o tempo conta no início da criação da conta) recebe 100 gcups.
+## Sistema de Moeda
+- O usuário começa com 200 moedas;
+- A cada 24 horas (o tempo conta no início da criação da conta) recebe 100 moedas.
 
 ## Notícias
 
-- O usuário consegue acompanhar todas as notícias da Gaia Cup pelo APP;
-- Notícias são criadas pelo administrador pelo Web-Site de administrador da Gaia Cup.
+- O usuário consegue acompanhar todas as notícias dos Torneios pelo APP;
+- Notícias são criadas pelo administrador pelo Web-Site de administrador dos torneios.
 
 ## Votação
 
@@ -39,7 +38,6 @@
 
 ## Tabela
 
-- Aqui podemos ver a tabela da atual fase da Gaia Cup;
 - Atualizado pelo administrador no Web-site de administrador;
 - Dinâmico.
 
